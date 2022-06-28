@@ -13,10 +13,31 @@ const monstrarMenu = () => {
     console.log(`${'6.'.green} Borrar tarea`);
     console.log(`${'0.'.green} Salir\n`);
 
+    const readline = require('readline').createInterface({
+        input: process.stdin,
+        Output: process.stdout
+    });
+    readline.question('Seleccione una opción: ', (opt) => {
+       
+        readline.close();
+    });
+}    
 
-  
-}
+
+
+    const pausa = () => {
+        const readline = require('readline').createInterface({
+            input: process.stdin,
+            Output: process.stdout
+        });
+
+        readline.question(`\nPresione ${'Enter'.green} para continuar...\n`, (opcion) => {
+            readline.close();
+        });  
+    }
+    
 
 module.exports = {
-    monstrarMenu
-}
+    monstrarMenu,
+    pausa
+}; 
